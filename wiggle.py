@@ -19,13 +19,13 @@ class Wiggler(gpiozero.Motor):
     more here: https://gpiozero.readthedocs.io/en/stable/api_output.html#motor
     '''
 
-    def __init__(self, pins, pwm=True, sleep_time=0.05, interval=21):
+    def __init__(self, forward, backward, pwm=True, sleep_time=0.05, interval=21, *args, **kwargs):
         '''
         numpy.arange results in: array([0. ,  0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9])
         using numpy.linspace to create steps ensures the last number will always be 1
         '''
 
-        gpiozero.Motor.__init__(self, *pins, pwm=pwm, *args, **kwargs)
+        gpiozero.Motor.__init__(self, forward, backward, pwm=pwm, *args, **kwargs)
         self.sleep_time = sleep_time
         self.interval = interval
         self.steps = numpy.linspace(0, 1, self.interval)
@@ -43,7 +43,7 @@ class Wiggler(gpiozero.Motor):
         for step in range(len(self.steps)):
             step += 1
             step *= -1
-            self.forward(speed=steps[step])
+            self.forward(speed=self.steps[step])
             self.current_speed = step
             time.sleep(self.sleep_time)
 
