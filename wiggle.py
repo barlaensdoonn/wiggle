@@ -43,8 +43,10 @@ class Wiggler(gpiozero.Motor):
         for step in range(len(self.steps)):
             step += 1
             step *= -1
-            self.forward(speed=self.steps[step])
-            self.current_speed = step
+            speed = self.steps[step]
+
+            self.forward(speed=speed)
+            self.current_speed = speed
             time.sleep(self.sleep_time)
 
 
