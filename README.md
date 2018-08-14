@@ -1,10 +1,10 @@
 # wiggle
 
 ## dependencies
-#### *gpiozero*
+#### *gpiozero + numpy*
 ```
 sudo apt-get update
-sudo apt-get install python3-gpiozero
+sudo apt-get install python3-gpiozero python3-numpy
 ```
 
 ## connections
