@@ -14,9 +14,12 @@ sudo apt-get install python3-gpiozero python3-numpy
 raspi connections to breakout board:
     3.3V -> VCC
     GND -> GND
-    GPIO4 -> PMWA
-    GPIO5 -> AIN1
-    GPIO6 -> AIN2
+    GPIO17 -> PMWA
+    GPIO5  -> AIN1
+    GPIO6  -> AIN2
+    GPIO18 -> PMWB
+    GPIO13 -> BIN1
+    GPIO19 -> BIN2
 
 Motor terminals connected to MOTORA outputs on breakout board
 12V power supply connected to VMOTOR power inputs on breakout board:

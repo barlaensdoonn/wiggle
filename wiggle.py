@@ -76,8 +76,8 @@ if __name__ == '__main__':
     pins_b = (13, 19)
     pwm_a = 17
     pwm_b = 18
-    wiggler_a = Wiggler(*pins_a, pwm_pin=pwm_a)
-    wiggler_b = Wiggler(*pins_b, pwm_pin=pwm_b)
+    wiggler_a = Wiggler(*pins_a, pwm_pin=pwm_a, speed=0.3)
+    wiggler_b = Wiggler(*pins_b, pwm_pin=pwm_b, speed=0.3)
 
     wiggler_a.test()
     wiggler_b.test()
